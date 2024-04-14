@@ -1,3 +1,5 @@
+/*ejercicio 3*/
+CREATE DATABASE videoclub;
 use videoclub;
 /*creo las tablas:
 cliente(@idCliente, Nombre, Email, Num_celular)

@@ -1,7 +1,6 @@
 /*ejercicio 5*/
-
+CREATE DATABASE aeropuertos;
 use aeropuertos;
-
 /*tablas
 aeropurtos(@Id_Aeropuertos, Nombre_Aeropuerto, Ubicacion, Aeropuertoscol, @usoPistasId)
 aviones(@id_avion, tipo_de_avion, cantidaddeaviones, cantidaddeasientos, @Id_vuelos)
