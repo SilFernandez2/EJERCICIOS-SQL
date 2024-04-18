@@ -1,24 +1,32 @@
-/*ejercicio 3*/
 CREATE DATABASE videoclub;
 use videoclub;
 /*creo las tablas:
-cliente(@idCliente, Nombre, Email, Num_celular)
+cliente(@idCliente, Nombre, Email, Num_celular, @clienteId)
 pelicula(@idPelicula, Genero, Año, Stock, @videoclub_id)
 proveedor(@idProveedor, Stock_de_peliculas, Datos_del_Proveedor)
 transaccion(@idTransaccion, Tipo, Fecha, @ClienteId)
-videoclub(@idVideoclub, Contacto, @Proveedor_Id)*/
+videoclub(@idVideoclub, Contacto, @Proveedor_Id, @videoclubId)*/
+
 CREATE TABLE cliente (
     idCliente INT AUTO_INCREMENT PRIMARY KEY,
     Nombre VARCHAR(255),
     Email VARCHAR(255),
     Num_celular VARCHAR(15)
 );
+
+ALTER TABLE  transaccion
+ADD clienteId int;
+
 CREATE TABLE pelicula (
     idPelicula INT AUTO_INCREMENT PRIMARY KEY,
     Genero VARCHAR(255),
     Año int,
     Stock int
 );
+
+ALTER TABLE  pelicula
+ADD videoclub_Id int;
+
 CREATE TABLE transaccion (
     idTransaccion INT AUTO_INCREMENT PRIMARY KEY,
     Tipo VARCHAR(255),
@@ -29,32 +37,25 @@ CREATE TABLE proveedor (
     Stock_de_peliculas int,
     Datos_del_Proveedor VARCHAR(255)
 );
+
+ALTER TABLE  videoclub
+ADD Proveedor_Id int;
+
 CREATE TABLE videoclub (
     idVideoclub INT AUTO_INCREMENT PRIMARY KEY,
     Contacto VARCHAR(255)
 );
 
-/*ver tablas: describe + nombre tabla*/
+/*ver tablas*/
 describe cliente;
 describe pelicula;
 describe proveedor;
 describe transaccion;
 describe videoclub;
 
-/* quitar o agregar variables ALTER TABLE nombre_de_tabla
-ADD nombre_de_variable tipo_de_dato;, lo uso par añadir las fk para realizar las relaciones 
-añado las variables que me sirven para las relaciones*/
-
-ALTER TABLE  pelicula
-ADD videoclub_Id int;
-
-ALTER TABLE  transaccion
-ADD clienteId int;
-
-ALTER TABLE  videoclub
-ADD Proveedor_Id int;
-
-/* Genero las relaciones entre tablas: cliente-transaccion-pelicula// pelicula-videoclub-proveedor*/
+/* Genero las relaciones entre tablas: cliente-transaccion-pelicula// 
+          pelicula-videoclub-proveedor*/
+          
 ALTER TABLE transaccion
 ADD CONSTRAINT fk_cliente_transaccion
 FOREIGN KEY (clienteId) REFERENCES cliente(idCliente);
