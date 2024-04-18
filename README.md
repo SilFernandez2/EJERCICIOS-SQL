@@ -5,7 +5,7 @@ Ejercicios de la guia 1
 - Modelizacion de datos con DER y creacion de tablas utilizando DDL.
 
   
-!) Video Club: Discutir a cerca de los procesos y necesidades de datos de un sistema para un VIDEOCLUB: Alquiler, Reserva, Compra de Nuevas Peliculas, Devolución.
+1) Video Club: Discutir a cerca de los procesos y necesidades de datos de un sistema para un VIDEOCLUB: Alquiler, Reserva, Compra de Nuevas Peliculas, Devolución.
         1.	Seleccionar una herramienta para su documentación
         2.	Realizar el Diagrama Entidad Relación
         3.	Realizar el DDD
