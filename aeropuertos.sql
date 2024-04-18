@@ -5,7 +5,7 @@ CREATE DATABASE aeropuertos;
 use aeropuertos;
 
 /*tablas
-aeropurtos(@Id_Aeropuertos, Nombre_Aeropuerto, Ubicacion, Aeropuertoscol, @usoPistasId)
+aeropuertos(@Id_Aeropuertos, Nombre_Aeropuerto, Ubicacion, Aeropuertoscol, @usoPistasId)
 aviones(@id_avion, tipo_de_avion, cantidad_de_aviones, cantidad_de_asientos, @Id_vuelos)
 checkin(@idCheckin, AeropuertosId, @id_aerolinea, @mostradorId)
 lineasaereas(@Id_Aerolinea, Nombre_aerolinea, @AvionId)
