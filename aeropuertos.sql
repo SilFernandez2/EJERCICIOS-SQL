@@ -69,6 +69,8 @@ CREATE TABLE reserva (
     Nro_de_vuelo int,
    Fecha_de_vencimiento date
 );
+alter table reserva 
+add column Fecha_reserva date;
 
 CREATE TABLE tipodepista (
     id_tipodepista INT AUTO_INCREMENT PRIMARY KEY,
@@ -200,10 +202,10 @@ VALUES ('Aeropuerto Internacional Ministro Pistarini', 'Buenos Aires', 'EZE', 1)
        ('Aeropuerto Internacional Jorge Chávez', 'Lima', 'LIM', 3);
        
 INSERT INTO vuelos (Tipo_de_vuelo, Fecha_de_salida, Hora_de_salida, Duracion, ciudad_origen, ciudad_destino, reservaId, lineaID)
-VALUES ('charter', '2011-03-01', '08:00:00', 5, 'Buenos Aires', 'Madrid', 12, 1),
-       ('de linea', '2011-03-15', '10:00:00', 9, 'Madrid', 'Buenos Aires', 13, 2),
-       ('charter', '2011-03-03', '08:00:00', 5, 'Buenos Aires', 'Madrid', 14, 3),
-       ('despegue', '2011-03-01', '08:00:00', 5, 'Buenos Aires', 'Madrid', 15, 1)
+VALUES ('charter', '2011-03-01', '08:00:00', 5, 'Buenos Aires', 'Madrid', 1, 1),
+       ('de linea', '2011-03-15', '10:00:00', 9, 'Madrid', 'Buenos Aires', 2, 2),
+       ('charter', '2011-03-03', '08:00:00', 5, 'Buenos Aires', 'Madrid', 3, 3),
+       ('despegue', '2011-03-01', '08:00:00', 5, 'Buenos Aires', 'Madrid', 4, 1)
        ;
 
 INSERT INTO pasajero (Nombre, tipo_de_documento, Nro_documento)
@@ -212,11 +214,13 @@ VALUES ('Juan Perez', 'DNI', 12345678),
        ('Hugo López', 'DNI', 12345679),
        ('Marta García', 'Pasaporte', 99765432);
 
+
 INSERT INTO reserva (id_cliente, Nro_de_vuelo, Fecha_de_vencimiento, idTipoMostrador)
 VALUES (1, 1, '2015-05-15',6),
        (2, 2, '2015-05-20',6),
-       (4, 1, '2012-05-15',6),
-       (3, 2, '2014-05-20',6);
+       (3, 2, '2014-05-20',6),
+       (4, 1, '2012-05-15',6)
+       ;
 
 INSERT INTO aviones (tipo_de_avion, cantidad_de_aviones, Id_vuelos )
 VALUES ('avionetas', 5,1),
